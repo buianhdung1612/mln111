@@ -1,0 +1,87 @@
+.button-follow {
+    position: relative;
+    background: #d0bc80;
+    transition: all 0.3s ease;
+}
+
+.button-follow span,
+.button-follow img {
+    position: relative;
+    z-index: 1;
+}
+
+.button-follow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(to right, #b7a367 0%, #d0bc80 100%);
+    transition: width 0.3s ease;
+}
+
+.button-follow:hover::after {
+    width: 100%;
+}
+
+.item::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.item:hover::before {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.item:hover h3,
+.item:hover img {
+    translate: 2px -2px;
+}
+
+.item h3,
+.item a {
+    position: relative;
+    z-index: 2;
+    transition: translate 0.3s ease;
+}
+
+.blog::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.blog:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.blog img {
+    position: relative;
+    z-index: 0;
+}
+
+.eye {
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.eye:hover {
+    color: white;
+    background-color: #322923;
+}
+
+.blog:hover .eye {
+    opacity: 1;
+}
