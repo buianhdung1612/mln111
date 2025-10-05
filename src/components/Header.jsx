@@ -20,14 +20,13 @@ export const Header = () => {
 
   return (
     <header
-      className={`
-        w-full top-0 left-0 z-50 transition-all duration-300
-        ${isSticky ? "fixed shadow-md bg-white" : "relative bg-white"}
-      `}
+      className="w-full top-0 left-0 z-50 sticky bg-white transition-shadow duration-300"
+      style={{
+        boxShadow: isSticky ? "0 2px 8px rgba(0,0,0,0.1)" : "none",
+      }}
     >
       <div
-        className={`ml-[93px] flex items-center justify-between py-[10px] ${
-          isSticky ? "mr-[93px]" : ""
+        className={`ml-[93px] flex items-center justify-between py-[10px] 
         }`}
       >
         {/* Logo */}
