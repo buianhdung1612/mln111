@@ -7,6 +7,7 @@ const quotes = [
     text: "Con người là thước đo của vạn vật",
     author: "Protagoras",
     button: "Tha hóa bản thân",
+    link: "/tha-hoa-ban-than",
     image:
       "https://images.unsplash.com/photo-1597761081347-b9d37f912156?w=924&auto=format&fit=crop&q=60",
   },
@@ -14,6 +15,7 @@ const quotes = [
     text: "Con người sinh ra tự do",
     author: "Rousseau",
     button: "Tha hoá trong Xã hội",
+    link: "/tha-hoa-xa-hoi",
     image:
       "https://plus.unsplash.com/premium_photo-1676391702953-f6ef6316eb0a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHBoaWxvc29waHl8ZW58MHx8MHx8fDA%3D",
   },
@@ -21,6 +23,7 @@ const quotes = [
     text: "Lao động tạo nên con người",
     author: "Karl Marx",
     button: "Tha hoá trong Lao động",
+    link: "/tha-hoa-lao-dong",
     image:
       "https://images.unsplash.com/photo-1603823529430-2cf7e72d13fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHBoaWxvc29waHl8ZW58MHx8MHx8fDA%3D",
   },
@@ -87,7 +90,7 @@ export const Section1 = () => {
             </p>
             <div className="inline-block mt-[50px]">
               <Link
-                to={"/"}
+                to={quotes[index].link}
                 className="flex items-center text-primary text-[1.8rem] font-[700] py-[30px] px-[32px] 2xl:py-[24px] 2xl:px-[27px] button-follow"
               >
                 <span>{quotes[index].button}</span>

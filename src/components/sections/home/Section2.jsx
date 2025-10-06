@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const philosophers = [
   {
     name: "Socrates",
@@ -27,22 +26,26 @@ export const Section2 = () => {
   return (
     <section className="py-[130px] w-[1140px] px-[15px] mx-auto flex gap-[30px]">
       {philosophers.map((p, i) => (
-        <div
+        <motion.div
           key={i}
-          className="flex-1 h-[504px] 2xl:h-[403px] relative item flex flex-col justify-end p-[40px]"
+          className="flex-1 h-[504px] 2xl:h-[403px] relative item flex flex-col justify-end p-[40px] group"
           style={{
             backgroundImage: `url(${p.image})`,
             backgroundSize: "cover",
             backgroundPosition: "44% center",
           }}
+          whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           {/* Tên triết gia */}
           <h3 className="text-[3.5rem] text-white text-center">{p.name}</h3>
 
           {/* Nút Thêm */}
-          <Link
-            to={"/"}
-            className="flex items-center text-primary text-[1.8rem] font-[700] py-[30px] px-[32px] mt-[130px] button-follow"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileHover={{ opacity: 1, y: 0 }}
+            className="flex items-center text-primary text-[1.8rem] font-[700] py-[30px] px-[32px] mt-[130px] button-follow absolute left-1/2 -translate-x-1/2 bottom-[40px]"
+            style={{ pointerEvents: "auto" }}
           >
             <span>Thêm</span>
             <img
@@ -50,8 +53,8 @@ export const Section2 = () => {
               src="https://avventure.themerex.net/wp-content/uploads/2018/07/arrow-for-button.png"
               alt=""
             />
-          </Link>
-        </div>
+          </motion.div>
+        </motion.div>
       ))}
     </section>
   );

@@ -1,13 +1,26 @@
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { ArrowArchery } from "iconoir-react";
 import { Link } from "react-router-dom";
 
 export const Section4 = () => {
+  const ref = useRef(null);
+  // Main section animation only runs once
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  // Right content animation only runs once for beautiful stagger effect
+  const rightRef = useRef(null);
+  const rightInView = useInView(rightRef, { once: true, margin: "-100px" });
   return (
-    <section
+    <motion.section
+      ref={ref}
       style={{
         backgroundImage: `url(https://avventure.themerex.net/wp-content/uploads/2018/04/biege_bg_.jpg)`,
       }}
       className="mt-[220px] h-[1070px]"
+      initial={{ opacity: 0, x: -60 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <section className="w-[1080px] pb-[150px] mx-auto flex relative">
         <iframe
@@ -44,50 +57,56 @@ export const Section4 = () => {
             height={736}
           />
         </div>
-        <div className="w-[50%] pt-[101px] px-[91px] bg-white">
+        <motion.div
+          ref={rightRef}
+          className="w-[50%] pt-[101px] px-[91px] bg-white"
+          initial={{ opacity: 0, x: 60 }}
+          animate={rightInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h3 className="text-[7rem] text-primary font-[700] leading-[1.2] mb-[50px]">
             Tha hóa xã hội
           </h3>
           <ul className="mb-[60px]">
-            <li className="flex items-center border-b-2 border-dashed border-[#dbdad4] py-[15px]">
-              <div className="w-[40px] h-[40px] border-2 border-secondary text-secondary flex items-center justify-center rounded-full relative">
-                <ArrowArchery className="rotate-[45deg]" />
-              </div>
-              <span className="ml-[20px] text-[2rem] text-[#746e5e]">
-                Mâu thuẫn giai cấp
-              </span>
-            </li>
-            <li className="flex items-center border-b-2 border-dashed border-[#dbdad4] py-[15px]">
-              <div className="w-[40px] h-[40px] border-2 border-secondary text-secondary flex items-center justify-center rounded-full relative">
-                <ArrowArchery className="rotate-[45deg]" />
-              </div>
-              <span className="ml-[20px] text-[2rem] text-[#746e5e]">
-                Phân hoá giàu nghèo
-              </span>
-            </li>
-            <li className="flex items-center border-b-2 border-dashed border-[#dbdad4] py-[15px]">
-              <div className="w-[40px] h-[40px] border-2 border-secondary text-secondary flex items-center justify-center rounded-full relative">
-                <ArrowArchery className="rotate-[45deg]" />
-              </div>
-              <span className="ml-[20px] text-[2rem] text-[#746e5e]">
-                Mặt trái thị trường
-              </span>
-            </li>
-            <li className="flex items-center py-[15px]">
-              <div className="w-[40px] h-[40px] border-2 border-secondary text-secondary flex items-center justify-center rounded-full relative">
-                <ArrowArchery className="rotate-[45deg]" />
-              </div>
-              <span className="ml-[20px] text-[2rem] text-[#746e5e]">
-                Hệ quả xã hội
-              </span>
-            </li>
+            {[
+              "Mâu thuẫn giai cấp",
+              "Phân hoá giàu nghèo",
+              "Mặt trái thị trường",
+              "Hệ quả xã hội",
+            ].map((text, idx) => (
+              <motion.li
+                key={text}
+                className={`flex items-center ${
+                  idx < 3 ? "border-b-2 border-dashed border-[#dbdad4]" : ""
+                } py-[15px]`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={rightInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2 + idx * 0.15,
+                  ease: "easeOut",
+                }}
+              >
+                <div className="w-[40px] h-[40px] border-2 border-secondary text-secondary flex items-center justify-center rounded-full relative">
+                  <ArrowArchery className="rotate-[45deg]" />
+                </div>
+                <span className="ml-[20px] text-[2rem] text-[#746e5e]">
+                  {text}
+                </span>
+              </motion.li>
+            ))}
           </ul>
-          <div className="flex items-center">
+          <motion.div
+            className="flex items-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          >
             <p className="text-secondary font-secondary text-[5rem]">
               Hãy theo dõi
             </p>
             <Link
-              to={"/"}
+              to={"/tha-hoa-xa-hoi"}
               className="flex items-center text-primary text-[1.8rem] font-[700] py-[25px] px-[25px] ml-[15px] mb-[12px] button-follow"
             >
               <span>Thêm</span>
@@ -97,9 +116,9 @@ export const Section4 = () => {
                 alt=""
               />
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
-    </section>
+    </motion.section>
   );
 };
