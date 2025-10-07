@@ -20,7 +20,7 @@ export const Header = () => {
 
   return (
     <header
-      className="w-full top-0 left-0 z-50 sticky bg-white transition-shadow duration-300"
+      className="w-full top-0 left-0 z-50 sticky bg-white transition-shadow duration-300 pr-[93px]"
       style={{
         boxShadow: isSticky ? "0 2px 8px rgba(0,0,0,0.1)" : "none",
       }}
@@ -41,7 +41,12 @@ export const Header = () => {
         </Link>
 
         {/* Slogan */}
-        <div className="w-[50%] text-secondary text-[4rem] font-secondary font-[700] text-center">
+        <div
+          className="w-[50%] text-secondary text-[4.5rem] font-[700] text-center"
+          style={{
+            fontFamily: "Protest Revolution",
+          }}
+        >
           Học triết - Sống thật
         </div>
 

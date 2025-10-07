@@ -70,6 +70,11 @@ const tiktokPosts = [
     image: "https://i.imgur.com/Y6CIVOB.png",
   },
   {
+    title: "Hoà mình cùng thiên nhiên để chữa lành nhé 🥰",
+    link: "https://www.tiktok.com/@hoctriet.songthat/video/7558319174259477768",
+    image: "https://i.imgur.com/kQtAQEJ.png",
+  },
+  {
     title: "Cùng tìm hiểu “tha hoá” theo Mác là như nào nhé! 🥰",
     link: "https://www.tiktok.com/@hoctriet.songthat/video/7553260747732552978",
     image: "https://i.imgur.com/NlPjnJt.png",

@@ -6,9 +6,9 @@ import { ScrollToTopButton } from "../components/ScrollToTopButton";
 export const Layout = () => {
   return (
     <>
+      <Header />
       <div className="flex">
         <div className="flex-1 mr-[93px]">
-          <Header />
           <Outlet />
         </div>
         <Sidebar />

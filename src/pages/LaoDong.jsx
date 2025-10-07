@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { Eye } from "iconoir-react";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 export const LaoDong = () => {
   return (
@@ -11,9 +12,38 @@ export const LaoDong = () => {
         style={{
           backgroundImage: `url(https://avventure.themerex.net/wp-content/uploads/2018/04/biege_bg_.jpg)`,
         }}
+        className="py-[90px] text-center"
       >
-        <div className="py-[90px] text-[6rem] text-primary text-center">
+        <div className="text-[6rem] text-primary font-[700]">
           Tha hóa trong lao động
+        </div>
+        <div className="flex items-center justify-center mt-[20px] mr-[150px]">
+          <Link
+            to={"/"}
+            className="text-[1.7rem] text-[#746e5e] font-[700] uppercase hover:text-[#d0bc80] transition-colors duration-300"
+          >
+            Trang chủ
+          </Link>
+          <KeyboardDoubleArrowRightIcon
+            style={{ fontSize: "2.5rem" }}
+            className="mx-[10px] text-[#d0bc80] font-[900]"
+          />
+          <span className="text-[#d0bc80] font-[700] text-[2.2rem] mx-[5px]">
+            .
+          </span>
+          <span className="text-[#d0bc80] font-[700] text-[2.2rem] mx-[5px]">
+            .
+          </span>
+          <span className="text-[#d0bc80] font-[700] text-[2.2rem] mx-[5px]">
+            .
+          </span>
+          <KeyboardDoubleArrowRightIcon
+            style={{ fontSize: "2.5rem" }}
+            className="mx-[10px] text-[#d0bc80] font-[900]"
+          />
+          <span className="text-[1.7rem] text-[#d0bc80] font-[700] uppercase">
+            Tha hóa trong lao động
+          </span>
         </div>
       </section>
 
@@ -155,7 +185,7 @@ export const LaoDong = () => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="w-full h-[100px] bg-[#d0bc80] px-[32px] py-[36px] text-primary text-[2.2rem] font-[500]">
+          <div className="w-full bg-[#d0bc80] p-[40px] 2xl:px-[32px] 2xl:py-[36px] text-primary text-[2.4rem] font-[500]">
             Bài viết liên quan
           </div>
           <div
@@ -164,7 +194,7 @@ export const LaoDong = () => {
               backgroundImage: `url(https://avventure.themerex.net/wp-content/uploads/2018/04/biege_bg_.jpg)`,
             }}
           >
-            <div className="mb-[30px]">
+            <div className="mb-[50px]">
               <div className="relative blog">
                 <img
                   src="https://luatduonggia.vn/wp-content/uploads/2024/09/hien-tuong-tha-hoa-la-gi-hien-tuong-tha-hoa-con-nguoi-la-gi.jpg"
@@ -180,7 +210,7 @@ export const LaoDong = () => {
                   <Eye className="text-[1.8rem]" />
                 </Link>
               </div>
-              <h3 className="text-primary text-[2rem] hover:text-[#d0bc80] transition-colors duration-300 my-[10px]">
+              <h3 className="text-primary text-[2.2rem] 2xl:text-[2rem] hover:text-[#d0bc80] transition-colors duration-300 my-[10px]">
                 <Link to={"/tha-hoa-ban-than"}>Tha hóa bản thân</Link>
               </h3>
               <p className="text-[#d0bc80] text-[1.3rem] font-[700] uppercase">
@@ -203,13 +233,36 @@ export const LaoDong = () => {
                   <Eye className="text-[1.8rem]" />
                 </Link>
               </div>
-              <h3 className="text-primary text-[2rem] hover:text-[#d0bc80] transition-colors duration-300 my-[10px]">
+              <h3 className="text-primary text-[2.2rem] 2xl:text-[2rem] hover:text-[#d0bc80] transition-colors duration-300 my-[10px]">
                 <Link to={"/tha-hoa-xa-hoi"}>Tha hóa trong xã hội</Link>
               </h3>
               <p className="text-[#d0bc80] text-[1.3rem] font-[700] uppercase">
                 Group 1 & 5 | 05/10/2025
               </p>
             </div>
+          </div>
+
+          <div className="w-full bg-[#d0bc80] mt-[40px] p-[40px] 2xl:px-[32px] 2xl:py-[36px] text-primary text-[2.4rem] font-[500]">
+            Từ khóa
+          </div>
+          <div
+            className="w-full pt-[40px] pb-[60px] px-[40px] flex gap-[10px]"
+            style={{
+              backgroundImage: `url(https://avventure.themerex.net/wp-content/uploads/2018/04/biege_bg_.jpg)`,
+            }}
+          >
+            <Link
+              to={"/"}
+              className="uppercase bg-[#dbdad4] text-[1.3rem] text-primary font-[600] inline-block px-[10px] py-[6px] hover:text-white hover:bg-secondary transition-colors duration-300 cursor-pointer"
+            >
+              Học triết sống thật
+            </Link>
+            <Link
+              to={"/tha-hoa-lao-dong"}
+              className="uppercase bg-[#dbdad4] text-[1.3rem] text-primary font-[600] inline-block px-[10px] py-[6px] hover:text-white hover:bg-secondary transition-colors duration-300 cursor-pointer"
+            >
+              Tha hóa lao động
+            </Link>
           </div>
         </div>
       </section>

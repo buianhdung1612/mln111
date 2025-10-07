@@ -34,7 +34,7 @@ export const Section8 = () => {
         <motion.a
           href="https://www.tiktok.com/@hoctriet.songthat"
           target="_blank"
-          className="ml-[200px] flex items-center text-primary text-[1.8rem] font-[700] py-[30px] px-[32px] button-follow"
+          className="ml-[200px] flex items-center text-primary text-[1.8rem] font-[700] py-[30px] px-[32px] button-follow z-10"
           whileHover={{
             scale: 1.07,
             boxShadow: "0 4px 24px rgba(208,187,128,0.18)",
